@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SalesLogix" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISalesLogix_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd2" namespace="http://schemas.homelearningcollege.com/" />
+      <xsd:import schemaLocation="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BusinessLogicService.DataAdaptors.SalesLogix.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISalesLogix_ValidateStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateStudent" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_ValidateStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_ValidateStudentOpportunity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateStudentOpportunity" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_ValidateStudentOpportunity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateStudentOpportunityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_ValidateTutor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTutor" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_ValidateTutor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateTutorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_Encrypt_InputMessage">
+    <wsdl:part name="parameters" element="tns:Encrypt" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_Encrypt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EncryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_Decrypt_InputMessage">
+    <wsdl:part name="parameters" element="tns:Decrypt" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_Decrypt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DecryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_ValidateSoftware_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateSoftware" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_ValidateSoftware_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateSoftwareResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_UpdateSoftware_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSoftware" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_UpdateSoftware_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSoftwareResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_GetExams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExams" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_GetExams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateExamBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateExamBooking" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateExamBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateExamBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CancelExamBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelExamBooking" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CancelExamBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelExamBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_RescheduleExamBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:RescheduleExamBooking" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_RescheduleExamBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RescheduleExamBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateExamMembership_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateExamMembership" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateExamMembership_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateExamMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_GetHistoryNotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryNotes" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_GetHistoryNotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateHistoryNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHistoryNote" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateHistoryNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHistoryNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_GradeStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GradeStudent" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_GradeStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GradeStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_SaveLead_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLead" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_SaveLead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveLeadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_GenerateUrl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateUrl" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_GenerateUrl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateLead_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLead" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateLead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLeadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateSale_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSale" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateSale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_GetPricing_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPricing" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_GetPricing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPricingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateAdhocPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAdhocPayment" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_CreateAdhocPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAdhocPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_DoSonarScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoSonarScore" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_DoSonarScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoSonarScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_ValidateAccountOwnership_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateAccountOwnership" />
+  </wsdl:message>
+  <wsdl:message name="ISalesLogix_ValidateAccountOwnership_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateAccountOwnershipResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISalesLogix">
+    <wsdl:operation name="ValidateStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IValidate/ValidateStudent" message="tns:ISalesLogix_ValidateStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IValidate/ValidateStudentResponse" message="tns:ISalesLogix_ValidateStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateStudentOpportunity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IValidate/ValidateStudentOpportunity" message="tns:ISalesLogix_ValidateStudentOpportunity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IValidate/ValidateStudentOpportunityResponse" message="tns:ISalesLogix_ValidateStudentOpportunity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTutor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IValidate/ValidateTutor" message="tns:ISalesLogix_ValidateTutor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IValidate/ValidateTutorResponse" message="tns:ISalesLogix_ValidateTutor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICryptography/Encrypt" message="tns:ISalesLogix_Encrypt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICryptography/EncryptResponse" message="tns:ISalesLogix_Encrypt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Decrypt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICryptography/Decrypt" message="tns:ISalesLogix_Decrypt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICryptography/DecryptResponse" message="tns:ISalesLogix_Decrypt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSoftware">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseSoftware/ValidateSoftware" message="tns:ISalesLogix_ValidateSoftware_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseSoftware/ValidateSoftwareResponse" message="tns:ISalesLogix_ValidateSoftware_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoftware">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseSoftware/UpdateSoftware" message="tns:ISalesLogix_UpdateSoftware_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseSoftware/UpdateSoftwareResponse" message="tns:ISalesLogix_UpdateSoftware_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExams/GetExams" message="tns:ISalesLogix_GetExams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExams/GetExamsResponse" message="tns:ISalesLogix_GetExams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateExamBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExams/CreateExamBooking" message="tns:ISalesLogix_CreateExamBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExams/CreateExamBookingResponse" message="tns:ISalesLogix_CreateExamBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelExamBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExams/CancelExamBooking" message="tns:ISalesLogix_CancelExamBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExams/CancelExamBookingResponse" message="tns:ISalesLogix_CancelExamBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RescheduleExamBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExams/RescheduleExamBooking" message="tns:ISalesLogix_RescheduleExamBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExams/RescheduleExamBookingResponse" message="tns:ISalesLogix_RescheduleExamBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateExamMembership">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExams/CreateExamMembership" message="tns:ISalesLogix_CreateExamMembership_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExams/CreateExamMembershipResponse" message="tns:ISalesLogix_CreateExamMembership_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryNotes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHistory/GetHistoryNotes" message="tns:ISalesLogix_GetHistoryNotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHistory/GetHistoryNotesResponse" message="tns:ISalesLogix_GetHistoryNotes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateHistoryNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHistory/CreateHistoryNote" message="tns:ISalesLogix_CreateHistoryNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHistory/CreateHistoryNoteResponse" message="tns:ISalesLogix_CreateHistoryNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GradeStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITutors/GradeStudent" message="tns:ISalesLogix_GradeStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITutors/GradeStudentResponse" message="tns:ISalesLogix_GradeStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveLead">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStore/SaveLead" message="tns:ISalesLogix_SaveLead_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStore/SaveLeadResponse" message="tns:ISalesLogix_SaveLead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateUrl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExamCentre/GenerateUrl" message="tns:ISalesLogix_GenerateUrl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExamCentre/GenerateUrlResponse" message="tns:ISalesLogix_GenerateUrl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLead">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesLogix/CreateLead" message="tns:ISalesLogix_CreateLead_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesLogix/CreateLeadResponse" message="tns:ISalesLogix_CreateLead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSale">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesLogix/CreateSale" message="tns:ISalesLogix_CreateSale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesLogix/CreateSaleResponse" message="tns:ISalesLogix_CreateSale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPricing">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesLogix/GetPricing" message="tns:ISalesLogix_GetPricing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesLogix/GetPricingResponse" message="tns:ISalesLogix_GetPricing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAdhocPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesLogix/CreateAdhocPayment" message="tns:ISalesLogix_CreateAdhocPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesLogix/CreateAdhocPaymentResponse" message="tns:ISalesLogix_CreateAdhocPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoSonarScore">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesLogix/DoSonarScore" message="tns:ISalesLogix_DoSonarScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesLogix/DoSonarScoreResponse" message="tns:ISalesLogix_DoSonarScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAccountOwnership">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalesLogix/ValidateAccountOwnership" message="tns:ISalesLogix_ValidateAccountOwnership_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalesLogix/ValidateAccountOwnershipResponse" message="tns:ISalesLogix_ValidateAccountOwnership_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ISalesLogix" type="tns:ISalesLogix">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISalesLogix_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidateStudent">
+      <soap12:operation soapAction="http://tempuri.org/IValidate/ValidateStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateStudentOpportunity">
+      <soap12:operation soapAction="http://tempuri.org/IValidate/ValidateStudentOpportunity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTutor">
+      <soap12:operation soapAction="http://tempuri.org/IValidate/ValidateTutor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <soap12:operation soapAction="http://tempuri.org/ICryptography/Encrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Decrypt">
+      <soap12:operation soapAction="http://tempuri.org/ICryptography/Decrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSoftware">
+      <soap12:operation soapAction="http://tempuri.org/ICourseSoftware/ValidateSoftware" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSoftware">
+      <soap12:operation soapAction="http://tempuri.org/ICourseSoftware/UpdateSoftware" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExams">
+      <soap12:operation soapAction="http://tempuri.org/IExams/GetExams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateExamBooking">
+      <soap12:operation soapAction="http://tempuri.org/IExams/CreateExamBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelExamBooking">
+      <soap12:operation soapAction="http://tempuri.org/IExams/CancelExamBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RescheduleExamBooking">
+      <soap12:operation soapAction="http://tempuri.org/IExams/RescheduleExamBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateExamMembership">
+      <soap12:operation soapAction="http://tempuri.org/IExams/CreateExamMembership" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryNotes">
+      <soap12:operation soapAction="http://tempuri.org/IHistory/GetHistoryNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateHistoryNote">
+      <soap12:operation soapAction="http://tempuri.org/IHistory/CreateHistoryNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GradeStudent">
+      <soap12:operation soapAction="http://tempuri.org/ITutors/GradeStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveLead">
+      <soap12:operation soapAction="http://tempuri.org/IStore/SaveLead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateUrl">
+      <soap12:operation soapAction="http://tempuri.org/IExamCentre/GenerateUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLead">
+      <soap12:operation soapAction="http://tempuri.org/ISalesLogix/CreateLead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSale">
+      <soap12:operation soapAction="http://tempuri.org/ISalesLogix/CreateSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPricing">
+      <soap12:operation soapAction="http://tempuri.org/ISalesLogix/GetPricing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAdhocPayment">
+      <soap12:operation soapAction="http://tempuri.org/ISalesLogix/CreateAdhocPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoSonarScore">
+      <soap12:operation soapAction="http://tempuri.org/ISalesLogix/DoSonarScore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAccountOwnership">
+      <soap12:operation soapAction="http://tempuri.org/ISalesLogix/ValidateAccountOwnership" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SalesLogix">
+    <wsdl:port name="WSHttpBinding_ISalesLogix" binding="tns:WSHttpBinding_ISalesLogix">
+      <soap12:address location="https://testapi.homelearningcollege.com/SalesLogix.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://testapi.homelearningcollege.com/SalesLogix.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

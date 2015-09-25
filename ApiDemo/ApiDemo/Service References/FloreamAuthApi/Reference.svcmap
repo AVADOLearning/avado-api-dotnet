@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f95ff7a0-911e-4645-b924-0e60186f2e80" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://testapi.homelearningcollege.com/Authentication.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Authentication.xsd" MetadataType="Schema" ID="7ee4ca8c-a354-4b84-ba4f-70f8cc6407e3" SourceId="1" SourceUrl="https://testapi.homelearningcollege.com/Authentication.svc?xsd=xsd2" />
+    <MetadataFile FileName="Authentication1.xsd" MetadataType="Schema" ID="7f83fb64-2ce4-4e8d-9a01-d7306a6c553a" SourceId="1" SourceUrl="https://testapi.homelearningcollege.com/Authentication.svc?xsd=xsd3" />
+    <MetadataFile FileName="Authentication2.xsd" MetadataType="Schema" ID="00441ba5-4798-4710-8716-ad17de5d66dd" SourceId="1" SourceUrl="https://testapi.homelearningcollege.com/Authentication.svc?xsd=xsd0" />
+    <MetadataFile FileName="Authentication3.xsd" MetadataType="Schema" ID="fff903ca-132d-4116-876a-45433bee308e" SourceId="1" SourceUrl="https://testapi.homelearningcollege.com/Authentication.svc?xsd=xsd1" />
+    <MetadataFile FileName="Authentication.wsdl" MetadataType="Wsdl" ID="f492c84a-c79e-455f-90e3-2de1b37ecf36" SourceId="1" SourceUrl="https://testapi.homelearningcollege.com/Authentication.svc" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

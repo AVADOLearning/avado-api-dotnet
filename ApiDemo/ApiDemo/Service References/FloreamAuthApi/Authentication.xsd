@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.homelearningcollege.com/" elementFormDefault="qualified" targetNamespace="http://schemas.homelearningcollege.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://testapi.homelearningcollege.com/Authentication.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BusinessLogicService.Common.Entities" />
+  <xs:import schemaLocation="https://testapi.homelearningcollege.com/Authentication.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="AuthenticationEntities.AuthenticationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BusinessLogicService.Common.Entities" minOccurs="0" name="ResourceType" type="q1:EResourceType" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthenticationEntities.AuthenticationRequest" nillable="true" type="tns:AuthenticationEntities.AuthenticationRequest" />
+  <xs:complexType name="ServiceRequest">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="ServiceRequest" nillable="true" type="tns:ServiceRequest" />
+  <xs:complexType name="AuthenticationEntities.AuthenticationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Expiry" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Token" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthenticationEntities.AuthenticationResponse" nillable="true" type="tns:AuthenticationEntities.AuthenticationResponse" />
+  <xs:complexType name="ServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageDetails" nillable="true" type="tns:ArrayOfValidationMessage" />
+      <xs:element minOccurs="0" name="Status" type="tns:ResponseStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponse" nillable="true" type="tns:ServiceResponse" />
+  <xs:complexType name="ArrayOfValidationMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValidationMessage" nillable="true" type="tns:ValidationMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValidationMessage" nillable="true" type="tns:ArrayOfValidationMessage" />
+  <xs:complexType name="ValidationMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationMessage" nillable="true" type="tns:ValidationMessage" />
+  <xs:simpleType name="ResponseStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="Fatal" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResponseStatus" nillable="true" type="tns:ResponseStatus" />
+</xs:schema>

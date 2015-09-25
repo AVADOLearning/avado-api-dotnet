@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd2" namespace="http://schemas.homelearningcollege.com/" />
+  <xs:import schemaLocation="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BusinessLogicService.DataAdaptors.SalesLogix.Entities" />
+  <xs:element name="ValidateStudent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q1:ValidateEntities.ValidateStudentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateStudentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.homelearningcollege.com/" minOccurs="0" name="ValidateStudentResult" nillable="true" type="q2:ValidateEntities.ValidateStudentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateStudentOpportunity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q3:ValidateEntities.ValidateStudentOpportunityRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateStudentOpportunityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.homelearningcollege.com/" minOccurs="0" name="ValidateStudentOpportunityResult" nillable="true" type="q4:ValidateEntities.ValidateStudentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTutor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q5:ValidateEntities.ValidateTutorRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateTutorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.homelearningcollege.com/" minOccurs="0" name="ValidateTutorResult" nillable="true" type="q6:ValidateEntities.ValidateTutorResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Encrypt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q7:CryptographyEntities.CryptographyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EncryptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.homelearningcollege.com/" minOccurs="0" name="EncryptResult" nillable="true" type="q8:CryptographyEntities.CryptographyResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Decrypt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q9:CryptographyEntities.CryptographyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DecryptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.homelearningcollege.com/" minOccurs="0" name="DecryptResult" nillable="true" type="q10:CryptographyEntities.CryptographyResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateSoftware">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q11:CourseSoftwareEntities.ValidateSoftwareRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateSoftwareResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.homelearningcollege.com/" minOccurs="0" name="ValidateSoftwareResult" nillable="true" type="q12:CourseSoftwareEntities.ValidateSoftwareResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSoftware">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q13:CourseSoftwareEntities.UpdateSoftwareRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSoftwareResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.homelearningcollege.com/" minOccurs="0" name="UpdateSoftwareResult" nillable="true" type="q14:CourseSoftwareEntities.UpdateSoftwareResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q15:ExamEntities.GetExamsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExamsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.homelearningcollege.com/" minOccurs="0" name="GetExamsResult" nillable="true" type="q16:ExamEntities.GetExamsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateExamBooking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q17:ExamEntities.ExamBookingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateExamBookingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.homelearningcollege.com/" minOccurs="0" name="CreateExamBookingResult" nillable="true" type="q18:ExamEntities.ExamBookingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelExamBooking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q19:ExamEntities.ExamBookingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelExamBookingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.homelearningcollege.com/" minOccurs="0" name="CancelExamBookingResult" nillable="true" type="q20:ExamEntities.ExamBookingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RescheduleExamBooking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q21:ExamEntities.ExamBookingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RescheduleExamBookingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.homelearningcollege.com/" minOccurs="0" name="RescheduleExamBookingResult" nillable="true" type="q22:ExamEntities.ExamBookingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateExamMembership">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q23:ExamEntities.CreateExamMembershipRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateExamMembershipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.homelearningcollege.com/" minOccurs="0" name="CreateExamMembershipResult" nillable="true" type="q24:ExamEntities.CreateExamMembershipResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistoryNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q25:HistoryEntities.GetHistoryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistoryNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.homelearningcollege.com/" minOccurs="0" name="GetHistoryNotesResult" nillable="true" type="q26:HistoryEntities.GetHistoryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateHistoryNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q27:HistoryEntities.CreateHistoryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateHistoryNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.homelearningcollege.com/" minOccurs="0" name="CreateHistoryNoteResult" nillable="true" type="q28:HistoryEntities.CreateHistoryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GradeStudent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q29:TutorEntities.GradeStudentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GradeStudentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.homelearningcollege.com/" minOccurs="0" name="GradeStudentResult" nillable="true" type="q30:TutorEntities.GradeStudentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveLead">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q31:SaveLeadEntities.SaveLeadRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveLeadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.homelearningcollege.com/" minOccurs="0" name="SaveLeadResult" nillable="true" type="q32:SaveLeadEntities.SaveLeadResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateUrl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="businessInfo" nillable="true" type="q33:ArrayOfKeyValueOfstringanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateUrlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/BusinessLogicService.DataAdaptors.SalesLogix.Entities" minOccurs="0" name="GenerateUrlResult" nillable="true" type="q34:ExamCentreEntities.ExamCentreResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLead">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q35:CreateLeadEntities.CreateLeadRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLeadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.homelearningcollege.com/" minOccurs="0" name="CreateLeadResult" nillable="true" type="q36:CreateLeadEntities.CreateLeadResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q37:CreateSaleEntities.CreateSaleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSaleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.homelearningcollege.com/" minOccurs="0" name="CreateSaleResult" nillable="true" type="q38:CreateSaleEntities.CreateSaleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPricing">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q39:ProductEntities.ProductPricingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPricingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.homelearningcollege.com/" minOccurs="0" name="GetPricingResult" nillable="true" type="q40:ProductEntities.ProductPricingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAdhocPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q41:CreateSaleEntities.CreateAdhocPaymentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAdhocPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.homelearningcollege.com/" minOccurs="0" name="CreateAdhocPaymentResult" nillable="true" type="q42:CreateSaleEntities.CreateSaleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoSonarScore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q43:SonarScoreEntities.SonarScoreRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoSonarScoreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.homelearningcollege.com/" minOccurs="0" name="DoSonarScoreResult" nillable="true" type="q44:SonarScoreEntities.SonarScoreResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateAccountOwnership">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.homelearningcollege.com/" minOccurs="0" name="request" nillable="true" type="q45:DirectDebitEntities.ValidateAccountOwnershipRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateAccountOwnershipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.homelearningcollege.com/" minOccurs="0" name="ValidateAccountOwnershipResult" nillable="true" type="q46:DirectDebitEntities.ValidateAccountOwnershipResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

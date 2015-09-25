@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2f7b584b-abf2-4c06-a18b-1710b9729e23" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://testapi.homelearningcollege.com/SalesLogix.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SalesLogix.xsd" MetadataType="Schema" ID="50afb8ff-24d1-4b9b-a1bb-be9e39c00a56" SourceId="1" SourceUrl="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd0" />
+    <MetadataFile FileName="SalesLogix1.xsd" MetadataType="Schema" ID="46fad2a3-d50f-4455-84dd-f1b15daafd66" SourceId="1" SourceUrl="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd3" />
+    <MetadataFile FileName="SalesLogix2.xsd" MetadataType="Schema" ID="c5853550-778c-49c5-a5a9-3f6ccd19689f" SourceId="1" SourceUrl="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd1" />
+    <MetadataFile FileName="SalesLogix3.xsd" MetadataType="Schema" ID="9c649de5-1aa0-479a-892c-7ae7db7ed147" SourceId="1" SourceUrl="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd2" />
+    <MetadataFile FileName="SalesLogix4.xsd" MetadataType="Schema" ID="3f83cd49-46e7-4a18-848e-04554da8cc21" SourceId="1" SourceUrl="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd4" />
+    <MetadataFile FileName="SalesLogix.wsdl" MetadataType="Wsdl" ID="a19cbfea-8cfc-4493-b973-4366c0009f19" SourceId="1" SourceUrl="https://testapi.homelearningcollege.com/SalesLogix.svc" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

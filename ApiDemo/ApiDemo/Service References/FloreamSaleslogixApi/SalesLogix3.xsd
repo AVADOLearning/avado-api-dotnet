@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.homelearningcollege.com/" elementFormDefault="qualified" targetNamespace="http://schemas.homelearningcollege.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://testapi.homelearningcollege.com/SalesLogix.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ValidateEntities.ValidateStudentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EnrolmentNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidateEntities.ValidateStudentRequest" nillable="true" type="tns:ValidateEntities.ValidateStudentRequest" />
+  <xs:complexType name="ServiceRequest">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="ServiceRequest" nillable="true" type="tns:ServiceRequest" />
+  <xs:complexType name="ValidateEntities.ValidateStudentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Contact" nillable="true" type="tns:Contact" />
+          <xs:element minOccurs="0" name="Course" nillable="true" type="tns:Course" />
+          <xs:element minOccurs="0" name="Grade" nillable="true" type="tns:Grade" />
+          <xs:element minOccurs="0" name="HasAccessTo" nillable="true" type="tns:AccessRights" />
+          <xs:element minOccurs="0" name="Membership" nillable="true" type="tns:ExamMembership" />
+          <xs:element minOccurs="0" name="Opportunity" nillable="true" type="tns:Opportunity" />
+          <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProduct" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidateEntities.ValidateStudentResponse" nillable="true" type="tns:ValidateEntities.ValidateStudentResponse" />
+  <xs:complexType name="ServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageDetails" nillable="true" type="tns:ArrayOfValidationMessage" />
+      <xs:element minOccurs="0" name="Status" type="tns:ResponseStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponse" nillable="true" type="tns:ServiceResponse" />
+  <xs:complexType name="ArrayOfValidationMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValidationMessage" nillable="true" type="tns:ValidationMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValidationMessage" nillable="true" type="tns:ArrayOfValidationMessage" />
+  <xs:complexType name="ValidationMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationMessage" nillable="true" type="tns:ValidationMessage" />
+  <xs:simpleType name="ResponseStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="Fatal" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResponseStatus" nillable="true" type="tns:ResponseStatus" />
+  <xs:complexType name="Contact">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfAddress" />
+      <xs:element minOccurs="0" name="ArmedForces" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Disability" type="xs:boolean" />
+      <xs:element name="Email" nillable="true" type="xs:string" />
+      <xs:element name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" type="tns:ContactGender" />
+      <xs:element minOccurs="0" name="HomeTelephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeTelephonePrefix" nillable="true" type="xs:string" />
+      <xs:element name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileTelephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileTelephonePrefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prison" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelephoneValidated" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Title" type="tns:ContactTitle" />
+      <xs:element name="Type" type="tns:ContactType" />
+      <xs:element minOccurs="0" name="WorkTelephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkTelephonePrefix" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contact" nillable="true" type="tns:Contact" />
+  <xs:complexType name="ArrayOfAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element name="Address1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coords" nillable="true" type="tns:Coordinates" />
+      <xs:element name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+      <xs:element name="Description" type="tns:AddressType" />
+      <xs:element minOccurs="0" name="HouseNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPrimary" type="xs:boolean" />
+      <xs:element name="PostCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="Coordinates">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Latitude" type="xs:int" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Coordinates" nillable="true" type="tns:Coordinates" />
+  <xs:simpleType name="AddressType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Home" />
+      <xs:enumeration value="Mailing" />
+      <xs:enumeration value="Office" />
+      <xs:enumeration value="Billing" />
+      <xs:enumeration value="Delivery" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AddressType" nillable="true" type="tns:AddressType" />
+  <xs:simpleType name="ContactGender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Female" />
+      <xs:enumeration value="Male" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ContactGender" nillable="true" type="tns:ContactGender" />
+  <xs:simpleType name="ContactTitle">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Dr" />
+      <xs:enumeration value="Gen" />
+      <xs:enumeration value="Hon" />
+      <xs:enumeration value="M" />
+      <xs:enumeration value="Miss" />
+      <xs:enumeration value="Mr" />
+      <xs:enumeration value="Mrs" />
+      <xs:enumeration value="Ms" />
+      <xs:enumeration value="Prof" />
+      <xs:enumeration value="Rev" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ContactTitle" nillable="true" type="tns:ContactTitle" />
+  <xs:simpleType name="ContactType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Lead" />
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="Billing" />
+      <xs:enumeration value="Delivery" />
+      <xs:enumeration value="ThirdPartyFunder" />
+      <xs:enumeration value="Student" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ContactType" nillable="true" type="tns:ContactType" />
+  <xs:complexType name="Course">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="College" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Faculty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tutor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TutorEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TutorId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VlcVersion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Course" nillable="true" type="tns:Course" />
+  <xs:complexType name="Grade">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Completed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CompletedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FinalGrade" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Grade" nillable="true" type="tns:Grade" />
+  <xs:complexType name="AccessRights">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="AccessRights" nillable="true" type="tns:AccessRights" />
+  <xs:complexType name="ExamMembership">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Voucher" nillable="true" type="tns:ExamVoucher" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExamMembership" nillable="true" type="tns:ExamMembership" />
+  <xs:complexType name="ExamVoucher">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IssueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Issued" nillable="true" type="tns:Action" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExamVoucher" nillable="true" type="tns:ExamVoucher" />
+  <xs:complexType name="Action">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Reasons" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Action" nillable="true" type="tns:Action" />
+  <xs:complexType name="Opportunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AwardingBody" type="tns:AwardingBody" />
+      <xs:element minOccurs="0" name="Communication" nillable="true" type="tns:Communication" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnrolmentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EnrolmentNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpportunityId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WelcomeCall" nillable="true" type="tns:WelcomeCall" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Opportunity" nillable="true" type="tns:Opportunity" />
+  <xs:simpleType name="AwardingBody">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Nzica" />
+      <xs:enumeration value="Accountancy" />
+      <xs:enumeration value="Bookkeeping" />
+      <xs:enumeration value="IT" />
+      <xs:enumeration value="InternetAndWebDesign" />
+      <xs:enumeration value="IAB" />
+      <xs:enumeration value="Marketing" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AwardingBody" nillable="true" type="tns:AwardingBody" />
+  <xs:complexType name="Communication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmailStop" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Communication" nillable="true" type="tns:Communication" />
+  <xs:complexType name="WelcomeCall">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WelcomeCall" nillable="true" type="tns:WelcomeCall" />
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Family" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ValidateEntities.ValidateStudentOpportunityRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OpportunityId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidateEntities.ValidateStudentOpportunityRequest" nillable="true" type="tns:ValidateEntities.ValidateStudentOpportunityRequest" />
+  <xs:complexType name="ValidateEntities.ValidateTutorRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element name="ContactId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidateEntities.ValidateTutorRequest" nillable="true" type="tns:ValidateEntities.ValidateTutorRequest" />
+  <xs:complexType name="ValidateEntities.ValidateTutorResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SalesLogixId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidateEntities.ValidateTutorResponse" nillable="true" type="tns:ValidateEntities.ValidateTutorResponse" />
+  <xs:complexType name="CryptographyEntities.CryptographyRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CryptographyEntities.CryptographyRequest" nillable="true" type="tns:CryptographyEntities.CryptographyRequest" />
+  <xs:complexType name="CryptographyEntities.CryptographyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CryptographyEntities.CryptographyResponse" nillable="true" type="tns:CryptographyEntities.CryptographyResponse" />
+  <xs:complexType name="CourseSoftwareEntities.ValidateSoftwareRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EnrolmentNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsMobileApp" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Software" type="tns:CourseSoftwareEntities.SoftwareType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CourseSoftwareEntities.ValidateSoftwareRequest" nillable="true" type="tns:CourseSoftwareEntities.ValidateSoftwareRequest" />
+  <xs:simpleType name="CourseSoftwareEntities.SoftwareType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="SageInstantAccounts" />
+      <xs:enumeration value="SagePayroll" />
+      <xs:enumeration value="SageOne" />
+      <xs:enumeration value="Abintegro" />
+      <xs:enumeration value="Captured" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CourseSoftwareEntities.SoftwareType" nillable="true" type="tns:CourseSoftwareEntities.SoftwareType" />
+  <xs:complexType name="CourseSoftwareEntities.ValidateSoftwareResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CourseSoftwareEntities.ValidateSoftwareResponse" nillable="true" type="tns:CourseSoftwareEntities.ValidateSoftwareResponse" />
+  <xs:complexType name="CourseSoftwareEntities.UpdateSoftwareRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CourseSoftwareEntities.ValidateSoftwareRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateDownloaded" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CourseSoftwareEntities.UpdateSoftwareRequest" nillable="true" type="tns:CourseSoftwareEntities.UpdateSoftwareRequest" />
+  <xs:complexType name="CourseSoftwareEntities.UpdateSoftwareResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CourseSoftwareEntities.ValidateSoftwareResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CourseSoftwareEntities.UpdateSoftwareResponse" nillable="true" type="tns:CourseSoftwareEntities.UpdateSoftwareResponse" />
+  <xs:complexType name="ExamEntities.GetExamsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element name="OpportunityId" nillable="true" type="xs:string" />
+          <xs:element name="Status" type="tns:ExamEntities.Status" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExamEntities.GetExamsRequest" nillable="true" type="tns:ExamEntities.GetExamsRequest" />
+  <xs:simpleType name="ExamEntities.Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CanBeRequested" />
+      <xs:enumeration value="Requested" />
+      <xs:enumeration value="Booked" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="CancelReq" />
+      <xs:enumeration value="Cancelled" />
+      <xs:enumeration value="Waiting" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExamEntities.Status" nillable="true" type="tns:ExamEntities.Status" />
+  <xs:complexType name="ExamEntities.GetExamsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Exams" nillable="true" type="tns:ArrayOfExam" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExamEntities.GetExamsResponse" nillable="true" type="tns:ExamEntities.GetExamsResponse" />
+  <xs:complexType name="ArrayOfExam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Exam" nillable="true" type="tns:Exam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExam" nillable="true" type="tns:ArrayOfExam" />
+  <xs:complexType name="Exam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AvailableVenues" nillable="true" type="tns:ArrayOfExamVenue" />
+      <xs:element minOccurs="0" name="BookingId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BookingStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanBeCancelled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanBeRescheduled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CentrePassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CentreUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfirmedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ConfirmedVenue" nillable="true" type="tns:ExamVenueBooking" />
+      <xs:element minOccurs="0" name="CourseVersionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duration" type="xs:int" />
+      <xs:element minOccurs="0" name="ExamCourseId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JoiningInstructionsSent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="JoiningInstructionsSentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LongNotes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Paid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PaymentRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RequestedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RequestedVenue" nillable="true" type="tns:ExamVenue" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecialNeeds" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Type" type="tns:ExamType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Exam" nillable="true" type="tns:Exam" />
+  <xs:complexType name="ArrayOfExamVenue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExamVenue" nillable="true" type="tns:ExamVenue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExamVenue" nillable="true" type="tns:ArrayOfExamVenue" />
+  <xs:complexType name="ExamVenue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VenueDates" nillable="true" type="tns:ArrayOfExamVenueDate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExamVenue" nillable="true" type="tns:ExamVenue" />
+  <xs:complexType name="ArrayOfExamVenueDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExamVenueDate" nillable="true" type="tns:ExamVenueDate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExamVenueDate" nillable="true" type="tns:ArrayOfExamVenueDate" />
+  <xs:complexType name="ExamVenueDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VenueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VenueDateFormat" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExamVenueDate" nillable="true" type="tns:ExamVenueDate" />
+  <xs:complexType name="ExamVenueBooking">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TimeSlot" nillable="true" type="tns:DateSpan" />
+      <xs:element minOccurs="0" name="Venue" nillable="true" type="tns:ExamVenue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExamVenueBooking" nillable="true" type="tns:ExamVenueBooking" />
+  <xs:complexType name="DateSpan">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Finish" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Start" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DateSpan" nillable="true" type="tns:DateSpan" />
+  <xs:simpleType name="ExamType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Inclusive" />
+      <xs:enumeration value="Exclusive" />
+      <xs:enumeration value="Resit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExamType" nillable="true" type="tns:ExamType" />
+  <xs:complexType name="ExamEntities.ExamBookingRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element name="Bookings" nillable="true" type="tns:ArrayOfExamBooking" />
+          <xs:element name="OpportunityId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesLogixUserId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExamEntities.ExamBookingRequest" nillable="true" type="tns:ExamEntities.ExamBookingRequest" />
+  <xs:complexType name="ArrayOfExamBooking">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExamBooking" nillable="true" type="tns:ExamBooking" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExamBooking" nillable="true" type="tns:ArrayOfExamBooking" />
+  <xs:complexType name="ExamBooking">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExamCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExamCourseId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RequestedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RequestedVenue" nillable="true" type="tns:ExamVenue" />
+      <xs:element minOccurs="0" name="SpecialNeeds" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:ExamType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExamBooking" nillable="true" type="tns:ExamBooking" />
+  <xs:complexType name="ExamEntities.ExamBookingResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExamEntities.ExamBookingResponse" nillable="true" type="tns:ExamEntities.ExamBookingResponse" />
+  <xs:complexType name="ExamEntities.CreateExamMembershipRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element name="Membership" nillable="true" type="tns:ExamMembership" />
+          <xs:element name="OpportunityId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExamEntities.CreateExamMembershipRequest" nillable="true" type="tns:ExamEntities.CreateExamMembershipRequest" />
+  <xs:complexType name="ExamEntities.CreateExamMembershipResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Created" nillable="true" type="tns:Action" />
+          <xs:element minOccurs="0" name="Voucher" nillable="true" type="tns:ExamVoucher" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExamEntities.CreateExamMembershipResponse" nillable="true" type="tns:ExamEntities.CreateExamMembershipResponse" />
+  <xs:complexType name="HistoryEntities.GetHistoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PagingRequest">
+        <xs:sequence>
+          <xs:element name="EntityId" nillable="true" type="xs:string" />
+          <xs:element name="Level" type="tns:HistoryLevel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HistoryEntities.GetHistoryRequest" nillable="true" type="tns:HistoryEntities.GetHistoryRequest" />
+  <xs:complexType name="PagingRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Page" type="xs:int" />
+          <xs:element minOccurs="0" name="RowsPerPage" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagingRequest" nillable="true" type="tns:PagingRequest" />
+  <xs:simpleType name="HistoryLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Contact" />
+      <xs:enumeration value="Opportunity" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HistoryLevel" nillable="true" type="tns:HistoryLevel" />
+  <xs:complexType name="HistoryEntities.GetHistoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PagingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Categories" nillable="true" type="tns:ArrayOfListItem" />
+          <xs:element minOccurs="0" name="Descriptions" nillable="true" type="tns:ArrayOfListItem" />
+          <xs:element minOccurs="0" name="History" nillable="true" type="tns:ArrayOfHistory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HistoryEntities.GetHistoryResponse" nillable="true" type="tns:HistoryEntities.GetHistoryResponse" />
+  <xs:complexType name="PagingResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TotalRows" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagingResponse" nillable="true" type="tns:PagingResponse" />
+  <xs:complexType name="ArrayOfListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListItem" nillable="true" type="tns:ListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListItem" nillable="true" type="tns:ArrayOfListItem" />
+  <xs:complexType name="ListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubItems" nillable="true" type="tns:ArrayOfListItem" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListItem" nillable="true" type="tns:ListItem" />
+  <xs:complexType name="ArrayOfHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="History" nillable="true" type="tns:History" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistory" nillable="true" type="tns:ArrayOfHistory" />
+  <xs:complexType name="History">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LongNotes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifyDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifyUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifyUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="History" nillable="true" type="tns:History" />
+  <xs:complexType name="HistoryEntities.CreateHistoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element name="EntityId" nillable="true" type="xs:string" />
+          <xs:element name="History" nillable="true" type="tns:History" />
+          <xs:element name="Level" type="tns:HistoryLevel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HistoryEntities.CreateHistoryRequest" nillable="true" type="tns:HistoryEntities.CreateHistoryRequest" />
+  <xs:complexType name="HistoryEntities.CreateHistoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HistoryEntities.CreateHistoryResponse" nillable="true" type="tns:HistoryEntities.CreateHistoryResponse" />
+  <xs:complexType name="TutorEntities.GradeStudentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FinalGrade" nillable="true" type="xs:string" />
+          <xs:element name="OpportunityId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TutorEntities.GradeStudentRequest" nillable="true" type="tns:TutorEntities.GradeStudentRequest" />
+  <xs:complexType name="TutorEntities.GradeStudentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TutorEntities.GradeStudentResponse" nillable="true" type="tns:TutorEntities.GradeStudentResponse" />
+  <xs:complexType name="SaveLeadEntities.SaveLeadRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StoreRequest">
+        <xs:sequence>
+          <xs:element name="ServiceRequest" nillable="true" type="tns:CreateLeadEntities.CreateLeadRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveLeadEntities.SaveLeadRequest" nillable="true" type="tns:SaveLeadEntities.SaveLeadRequest" />
+  <xs:complexType name="StoreRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StoreGuid" type="ser:guid" />
+          <xs:element minOccurs="0" name="SubmitRequest" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoreRequest" nillable="true" type="tns:StoreRequest" />
+  <xs:complexType name="CreateLeadEntities.CreateLeadRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AppendToAccount" nillable="true" type="xs:string" />
+          <xs:element name="Contacts" nillable="true" type="tns:ArrayOfContact" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CourseInterests" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element name="LeadSource" nillable="true" type="tns:CreateLeadEntities.LeadSource" />
+          <xs:element minOccurs="0" name="Questions" nillable="true" type="tns:CreateLeadEntities.Questions" />
+          <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesLogixUserId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateLeadEntities.CreateLeadRequest" nillable="true" type="tns:CreateLeadEntities.CreateLeadRequest" />
+  <xs:complexType name="ArrayOfContact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:Contact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContact" nillable="true" type="tns:ArrayOfContact" />
+  <xs:complexType name="CreateLeadEntities.LeadSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnalyticsClientId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BrandAssociation" type="tns:CreateLeadEntities.BrandAssociation" />
+      <xs:element minOccurs="0" name="CampaignCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Experiment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsBtb" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SubmissionType" type="tns:CreateLeadEntities.SubmissionType" />
+      <xs:element minOccurs="0" name="UseAutoDial" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateLeadEntities.LeadSource" nillable="true" type="tns:CreateLeadEntities.LeadSource" />
+  <xs:simpleType name="CreateLeadEntities.BrandAssociation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="HomeLearningCollege" />
+      <xs:enumeration value="Floream" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CreateLeadEntities.BrandAssociation" nillable="true" type="tns:CreateLeadEntities.BrandAssociation" />
+  <xs:simpleType name="CreateLeadEntities.SubmissionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="MiniRfi" />
+      <xs:enumeration value="Madlib" />
+      <xs:enumeration value="Lightbox" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CreateLeadEntities.SubmissionType" nillable="true" type="tns:CreateLeadEntities.SubmissionType" />
+  <xs:complexType name="CreateLeadEntities.Questions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalQuestions" nillable="true" type="tns:ArrayOfAdditionalQuestion" />
+      <xs:element minOccurs="0" name="ArmedForces" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BestTimeToCall" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComputerAccess" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CurrentRole" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmploymentStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnrolmentExpectation" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HighestQualification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LivingArrangements" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Motivation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpenDayInterest" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Origin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PayForCourse" nillable="true" type="tns:CreateLeadEntities.PlanToPay" />
+      <xs:element minOccurs="0" name="Prison" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReasonToStudy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SalaryBand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThirdPartyOptOut" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateLeadEntities.Questions" nillable="true" type="tns:CreateLeadEntities.Questions" />
+  <xs:complexType name="ArrayOfAdditionalQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalQuestion" nillable="true" type="tns:AdditionalQuestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalQuestion" nillable="true" type="tns:ArrayOfAdditionalQuestion" />
+  <xs:complexType name="AdditionalQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnswerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuestionCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalQuestion" nillable="true" type="tns:AdditionalQuestion" />
+  <xs:simpleType name="CreateLeadEntities.PlanToPay">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Browsing" />
+      <xs:enumeration value="Employer" />
+      <xs:enumeration value="Instalments" />
+      <xs:enumeration value="PayInFull" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CreateLeadEntities.PlanToPay" nillable="true" type="tns:CreateLeadEntities.PlanToPay" />
+  <xs:complexType name="SaveLeadEntities.SaveLeadResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StoreResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServiceResponse" nillable="true" type="tns:CreateLeadEntities.CreateLeadResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SaveLeadEntities.SaveLeadResponse" nillable="true" type="tns:SaveLeadEntities.SaveLeadResponse" />
+  <xs:complexType name="StoreResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StoreGuid" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoreResponse" nillable="true" type="tns:StoreResponse" />
+  <xs:complexType name="CreateLeadEntities.CreateLeadResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Account" nillable="true" type="tns:CreateLeadEntities.Identity" />
+          <xs:element minOccurs="0" name="Contacts" nillable="true" type="tns:ArrayOfCreateLeadEntities.Identity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateLeadEntities.CreateLeadResponse" nillable="true" type="tns:CreateLeadEntities.CreateLeadResponse" />
+  <xs:complexType name="CreateLeadEntities.Identity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Identifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:ContactType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateLeadEntities.Identity" nillable="true" type="tns:CreateLeadEntities.Identity" />
+  <xs:complexType name="ArrayOfCreateLeadEntities.Identity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreateLeadEntities.Identity" nillable="true" type="tns:CreateLeadEntities.Identity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCreateLeadEntities.Identity" nillable="true" type="tns:ArrayOfCreateLeadEntities.Identity" />
+  <xs:complexType name="CreateSaleEntities.CreateSaleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeliveryId" nillable="true" type="xs:string" />
+          <xs:element name="PaymentPlan" nillable="true" type="tns:PaymentPlan" />
+          <xs:element name="StudentId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateSaleEntities.CreateSaleRequest" nillable="true" type="tns:CreateSaleEntities.CreateSaleRequest" />
+  <xs:complexType name="PaymentPlan">
+    <xs:sequence>
+      <xs:element name="Method" type="tns:PaymentPlanMethod" />
+      <xs:element minOccurs="0" name="PaymentCard" nillable="true" type="tns:Card" />
+      <xs:element name="ProductCode" nillable="true" type="xs:string" />
+      <xs:element name="Reference" nillable="true" type="xs:string" />
+      <xs:element name="TakePayment" type="xs:boolean" />
+      <xs:element name="Type" type="tns:PaymentPlanType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentPlan" nillable="true" type="tns:PaymentPlan" />
+  <xs:simpleType name="PaymentPlanMethod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSpecified" />
+      <xs:enumeration value="Invoice" />
+      <xs:enumeration value="Cash" />
+      <xs:enumeration value="Cheque" />
+      <xs:enumeration value="CreditCard" />
+      <xs:enumeration value="DebitCard" />
+      <xs:enumeration value="DirectDebit" />
+      <xs:enumeration value="PaymentSlip" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PaymentPlanMethod" nillable="true" type="tns:PaymentPlanMethod" />
+  <xs:complexType name="Card">
+    <xs:sequence>
+      <xs:element name="CardHoldersName" nillable="true" type="xs:string" />
+      <xs:element name="CardNumber" nillable="true" type="xs:string" />
+      <xs:element name="CardType" type="tns:CardType" />
+      <xs:element name="ExpiryDate" nillable="true" type="tns:CardDate" />
+      <xs:element minOccurs="0" name="IssueNumber" nillable="true" type="xs:string" />
+      <xs:element name="SecurityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="tns:CardDate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Card" nillable="true" type="tns:Card" />
+  <xs:simpleType name="CardType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Visa" />
+      <xs:enumeration value="MasterCard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CardType" nillable="true" type="tns:CardType" />
+  <xs:complexType name="CardDate">
+    <xs:sequence>
+      <xs:element name="Month" nillable="true" type="xs:string" />
+      <xs:element name="Year" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardDate" nillable="true" type="tns:CardDate" />
+  <xs:simpleType name="PaymentPlanType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PIF1">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PIF2">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PIF3">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PIF36">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">36</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PaymentPlanType" nillable="true" type="tns:PaymentPlanType" />
+  <xs:complexType name="CreateSaleEntities.CreateSaleResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Opportunity" nillable="true" type="tns:CreateSaleEntities.Identity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateSaleEntities.CreateSaleResponse" nillable="true" type="tns:CreateSaleEntities.CreateSaleResponse" />
+  <xs:complexType name="CreateSaleEntities.Identity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthorisationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpportunityId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentSuccessful" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateSaleEntities.Identity" nillable="true" type="tns:CreateSaleEntities.Identity" />
+  <xs:complexType name="ProductEntities.ProductPricingRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element name="ProductCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductEntities.ProductPricingRequest" nillable="true" type="tns:ProductEntities.ProductPricingRequest" />
+  <xs:complexType name="ProductEntities.ProductPricingResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Pricing" nillable="true" type="tns:ArrayOfProductPricing" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductEntities.ProductPricingResponse" nillable="true" type="tns:ProductEntities.ProductPricingResponse" />
+  <xs:complexType name="ArrayOfProductPricing">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductPricing" nillable="true" type="tns:ProductPricing" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductPricing" nillable="true" type="tns:ArrayOfProductPricing" />
+  <xs:complexType name="ProductPricing">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BasePrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Deposit" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GoodsPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InstalmentPrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Instalments" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Program" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicesPrice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductPricing" nillable="true" type="tns:ProductPricing" />
+  <xs:complexType name="CreateSaleEntities.CreateAdhocPaymentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element name="Method" type="tns:PaymentPlanMethod" />
+          <xs:element name="OpportunityId" nillable="true" type="xs:string" />
+          <xs:element name="PaymentCard" nillable="true" type="tns:Card" />
+          <xs:element name="ProductPayments" nillable="true" type="tns:ArrayOfProductPaymentPlan" />
+          <xs:element name="Reference" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesLogixUserId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateSaleEntities.CreateAdhocPaymentRequest" nillable="true" type="tns:CreateSaleEntities.CreateAdhocPaymentRequest" />
+  <xs:complexType name="ArrayOfProductPaymentPlan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductPaymentPlan" nillable="true" type="tns:ProductPaymentPlan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductPaymentPlan" nillable="true" type="tns:ArrayOfProductPaymentPlan" />
+  <xs:complexType name="ProductPaymentPlan">
+    <xs:sequence>
+      <xs:element name="Price" type="xs:decimal" />
+      <xs:element name="Product" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductPaymentPlan" nillable="true" type="tns:ProductPaymentPlan" />
+  <xs:complexType name="SonarScoreEntities.SonarScoreRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContactId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SonarScoreEntities.SonarScoreRequest" nillable="true" type="tns:SonarScoreEntities.SonarScoreRequest" />
+  <xs:complexType name="SonarScoreEntities.SonarScoreResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SonarScoreEntities.SonarScoreResponse" nillable="true" type="tns:SonarScoreEntities.SonarScoreResponse" />
+  <xs:complexType name="DirectDebitEntities.ValidateAccountOwnershipRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BuildingSocietyRollNumber" nillable="true" type="xs:string" />
+          <xs:element name="OpportunityId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesLogixUserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DirectDebitEntities.ValidateAccountOwnershipRequest" nillable="true" type="tns:DirectDebitEntities.ValidateAccountOwnershipRequest" />
+  <xs:complexType name="DirectDebitEntities.ValidateAccountOwnershipResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DirectDebitEntities.ValidateAccountOwnershipResponse" nillable="true" type="tns:DirectDebitEntities.ValidateAccountOwnershipResponse" />
+</xs:schema>
