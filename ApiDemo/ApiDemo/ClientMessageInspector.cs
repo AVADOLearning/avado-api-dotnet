@@ -5,6 +5,7 @@ using System.ServiceModel.Configuration;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using ApiDemo;
+using BusinessLogicService.Security.Entities;
 
 namespace BusinessLogicService.Security // Do not change this
 {

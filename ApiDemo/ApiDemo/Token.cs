@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System.ServiceModel.Channels;
 
-namespace ApiDemo
+namespace BusinessLogicService.Security.Entities // Do not change this
 {
     [DataContract]
     public sealed class Token
