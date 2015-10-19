@@ -59,6 +59,11 @@ namespace ApiDemo
                             HomeTelephone = "02086766255", // Mobile and work number properties exist as well
                             Reference = "Your unique reference" // Reference in your database
                         }
+                    },
+                    Questions = new CreateLeadEntitiesQuestions
+                    {
+                        PayForCourse = CreateLeadEntitiesPlanToPay.Employer, // If the user's employer will sponsor them
+                        EnrolmentExpectation = DateTime.UtcNow.AddMonths(6), // The user wishes to enrol is six months time
                     }
                 }
             );
